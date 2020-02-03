@@ -9,11 +9,28 @@ namespace Eventmaker.Model
 {
     class EventCatalogSingleton
     {
+        private EventCatalogSingleton _instance;
         private ObservableCollection<Event> EventCatalog;
 
-        EventCatalogSingleton()
+        private EventCatalogSingleton()
         {
-            
+            EventCatalog=new ObservableCollection<Event>();
+        }
+
+        public EventCatalogSingleton Instance
+        {
+            get
+            {
+                if (EventCatalog != null)
+                {
+                    return _instance;
+                }
+                else
+                {
+                    _instance=new EventCatalogSingleton();
+                    return _instance;
+                }
+            }
         }
 
         public void Add(Event e)
