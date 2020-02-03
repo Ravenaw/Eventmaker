@@ -11,4 +11,8 @@
     <Page.DataContext>
         <viewModel:EventViewModel/>
     </Page.DataContext>
+
+    <ListView ItemsSource="{Binding EventCatalogSingleton}">
+        
+    </ListView>
 </Page>
