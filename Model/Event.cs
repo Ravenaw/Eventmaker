@@ -13,5 +13,15 @@ namespace Eventmaker.Model
         private string Description;
         private string Place;
         private DateTime DateTime;
+
+        Event()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return $"{ID.ToString()}\t{Name}\t{Description}\t{Place}\t{DateTime.Date.ToString()}";
+        }
     }
 }
