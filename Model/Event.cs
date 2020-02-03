@@ -14,9 +14,13 @@ namespace Eventmaker.Model
         private string Place;
         private DateTime DateTime;
 
-        Event()
+        public Event(int id, string name, string description, string place, DateTime dateTime)
         {
-
+            ID = id;
+            Name = name;
+            Description = description;
+            Place = place;
+            DateTime = dateTime;
         }
 
         public override string ToString()

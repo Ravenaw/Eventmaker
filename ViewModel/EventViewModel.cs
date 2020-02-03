@@ -13,7 +13,7 @@ namespace Eventmaker.ViewModel
 {
     class EventViewModel:INotifyPropertyChanged
     {
-        private EventCatalogSingleton instance;
+        public EventCatalogSingleton instance { get; }
         public EventViewModel()
         {
             instance=EventCatalogSingleton.Instance;
@@ -26,5 +26,7 @@ namespace Eventmaker.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 }
