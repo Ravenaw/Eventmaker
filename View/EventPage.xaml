@@ -12,7 +12,7 @@
         <viewModel:EventViewModel/>
     </Page.DataContext>
 
-    <ListView ItemsSource="{Binding instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto">
+    <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto">
         
     </ListView>
 </Page>
