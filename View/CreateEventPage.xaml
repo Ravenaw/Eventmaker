@@ -28,7 +28,7 @@
             </Grid.RowDefinitions>
 
             <Grid Row="0" >
-                <TextBlock Text="Add event" FontSize="40" TextAlignment="Center" Margin="10,10,10,10" />
+                <TextBlock Text="Add event" FontSize="40" TextAlignment="Center" Margin="10,10,10,10"/>
             </Grid>
 
             <Grid Row="1">
@@ -59,7 +59,7 @@
             </Grid>
 
             <Grid Row="3">
-                <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15"></Button>
+                <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15" Click="CreateEvent"></Button>
                 <Button Content="Back" Margin="350,20,0,0" Width="60" FontSize="15" Click="GoToEventPage"></Button>
             </Grid>
         </Grid>
