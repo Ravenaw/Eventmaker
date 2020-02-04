@@ -20,7 +20,7 @@ namespace Eventmaker.ViewModel
         public string Place { get; set; }
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
-
+        public Handler.EventHandler EventHandler { get; set; }
         public EventViewModel()
         {
 
@@ -28,7 +28,7 @@ namespace Eventmaker.ViewModel
             DateTime dt = System.DateTime.Now;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-
+            EventHandler = new Handler.EventHandler();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

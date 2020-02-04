@@ -8,6 +8,6 @@ namespace Eventmaker.Handler
 {
     class EventHandler
     {
-
+        
     }
 }
