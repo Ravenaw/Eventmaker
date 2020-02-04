@@ -13,10 +13,22 @@ namespace Eventmaker.ViewModel
 {
     class EventViewModel:INotifyPropertyChanged
     {
-        public EventCatalogSingleton instance { get; }
+        public EventCatalogSingleton Instance { get; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Place { get; set; }
+        public DateTimeOffset Date { get; set; }
+        public TimeSpan Time { get; set; }
+
         public EventViewModel()
         {
-            instance=EventCatalogSingleton.Instance;
+
+            Instance=EventCatalogSingleton.Instance;
+            DateTime dt = System.DateTime.Now;
+            Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
+            Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
