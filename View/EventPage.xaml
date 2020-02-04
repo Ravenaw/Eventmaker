@@ -20,7 +20,7 @@
             <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto"></ListView>
         </Grid>
         <Grid Row="1">
-            <Button Content="Create" Click="NavigateToCreate"></Button>
+            <Button Content="Add" Click="NavigateToCreate" HorizontalAlignment="Center"></Button>
         </Grid>
 
     </Grid>
