@@ -60,7 +60,7 @@
 
             <Grid Row="3">
                 <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15"></Button>
-                <Button Content="Back" Margin="350,20,0,0" Width="60" FontSize="15"></Button>
+                <Button Content="Back" Margin="350,20,0,0" Width="60" FontSize="15" Click="GoToEventPage"></Button>
             </Grid>
         </Grid>
 

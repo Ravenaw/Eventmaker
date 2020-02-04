@@ -11,8 +11,18 @@
     <Page.DataContext>
         <viewModel:EventViewModel/>
     </Page.DataContext>
+    <Grid HorizontalAlignment="Center" Width="450" Height="auto">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto"></ListView>
+        </Grid>
+        <Grid Row="1">
+            <Button Content="Create" Click="NavigateToCreate"></Button>
+        </Grid>
 
-    <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto">
-        
-    </ListView>
+    </Grid>
+
 </Page>
