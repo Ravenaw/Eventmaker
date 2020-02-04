@@ -6,7 +6,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Eventmaker.Annotations;
+using Eventmaker.Common;
 using Eventmaker.Model;
 
 namespace Eventmaker.ViewModel
@@ -21,6 +23,7 @@ namespace Eventmaker.ViewModel
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
         public Handler.EventHandler EventHandler { get; set; }
+        private ICommand _createEventCommand;
         public EventViewModel()
         {
 
@@ -28,7 +31,8 @@ namespace Eventmaker.ViewModel
             DateTime dt = System.DateTime.Now;
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
-            EventHandler = new Handler.EventHandler();
+            EventHandler = new Handler.EventHandler(this);
+            RelayCommand rc=new RelayCommand(EventHandler.CreateEvent);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -39,6 +43,11 @@ namespace Eventmaker.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        
+        public ICommand CreateEventCommand
+        {
+            get { return _createEventCommand; }
+            set { _createEventCommand = value; }
+        }
+
     }
 }
