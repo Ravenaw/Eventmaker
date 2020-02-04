@@ -13,7 +13,7 @@
         <viewModel:EventViewModel/>
     </Page.DataContext>
 
-    <Grid HorizontalAlignment="Center" Width="500" Height="auto">
+    <Grid HorizontalAlignment="Center" Width="450" Height="auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -27,8 +27,8 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Row="0">
-                <TextBlock Text="Add event" FontSize="40" TextAlignment="Center" />
+            <Grid Row="0" >
+                <TextBlock Text="Add event" FontSize="40" TextAlignment="Center" Margin="10,10,10,10" />
             </Grid>
 
             <Grid Row="1">
@@ -59,7 +59,8 @@
             </Grid>
 
             <Grid Row="3">
-                <Button Content="Add"></Button>
+                <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15"></Button>
+                <Button Content="Back" Margin="350,20,0,0" Width="60" FontSize="15"></Button>
             </Grid>
         </Grid>
 
