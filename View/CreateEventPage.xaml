@@ -44,18 +44,18 @@
                     <ColumnDefinition Width="130"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Id" FontSize="20"></TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="Id" Text="{Binding Path=ID, Mode=TwoWay}"></TextBox>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" FontSize="20" ></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="Name" Text="{Binding Path=Name, Mode=TwoWay}"></TextBox>
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Description" FontSize="20" ></TextBlock>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="Description" Text="{Binding Path=Description, Mode=TwoWay}"></TextBox>
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Place" FontSize="20" ></TextBlock>
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="Place" Text="{Binding Path=Place, Mode=TwoWay}"></TextBox>
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Date" FontSize="20" ></TextBlock>
-                <DatePicker Grid.Row="4" Grid.Column="1" x:Name="Date" Date="{Binding Path=Date, Mode=TwoWay}"></DatePicker>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="Time" FontSize="20" ></TextBlock>
-                <TimePicker Grid.Row="5" Grid.Column="1" x:Name="Time" Time="{Binding Path=Time, Mode=TwoWay}"></TimePicker>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Id" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10"></TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="Id" Text="{Binding Path=ID, Mode=TwoWay}" Margin="10,10,10,10"></TextBox>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Name" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10" ></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="Name" Text="{Binding Path=Name, Mode=TwoWay}" Margin="10,10,10,10"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Description" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10" ></TextBlock>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="Description" Text="{Binding Path=Description, Mode=TwoWay}" Margin="10,10,10,10"></TextBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Place" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10"></TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="Place" Text="{Binding Path=Place, Mode=TwoWay}" Margin="10,10,10,10"></TextBox>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Date" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10" ></TextBlock>
+                <DatePicker Grid.Row="4" Grid.Column="1" x:Name="Date" Date="{Binding Path=Date, Mode=TwoWay}" Margin="10,10,10,10"></DatePicker>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Time" FontSize="20" HorizontalAlignment="Right" Margin="10,10,10,10" ></TextBlock>
+                <TimePicker Grid.Row="5" Grid.Column="1" x:Name="Time" Time="{Binding Path=Time, Mode=TwoWay}" Margin="10,10,10,10"></TimePicker>
             </Grid>
 
             <Grid Row="3">
