@@ -58,8 +58,8 @@
                 <TimePicker Grid.Row="5" Grid.Column="1" x:Name="Time" Time="{Binding Path=Time, Mode=TwoWay}" Margin="10,10,10,10"></TimePicker>
             </Grid>
 
-            <Grid Row="3">
-                <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15" Click="CreateEvent"></Button>
+            <Grid Row="2">
+                <Button Content="Add" Margin="160,20,0,0" Width="60" FontSize="15" Command="{Binding CreateEventCommand}"></Button>
                 <Button Content="Back" Margin="350,20,0,0" Width="60" FontSize="15" Click="GoToEventPage"></Button>
             </Grid>
         </Grid>

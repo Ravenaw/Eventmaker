@@ -24,6 +24,11 @@ namespace Eventmaker.ViewModel
         public TimeSpan Time { get; set; }
         public Handler.EventHandler EventHandler { get; set; }
         private ICommand _createEventCommand;
+        public ICommand CreateEventCommand
+        {
+            get { return _createEventCommand; }
+            set { _createEventCommand = value; }
+        }
         public EventViewModel()
         {
 
@@ -32,7 +37,7 @@ namespace Eventmaker.ViewModel
             Date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             EventHandler = new Handler.EventHandler(this);
-            RelayCommand rc=new RelayCommand(EventHandler.CreateEvent);
+            CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -41,12 +46,6 @@ namespace Eventmaker.ViewModel
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public ICommand CreateEventCommand
-        {
-            get { return _createEventCommand; }
-            set { _createEventCommand = value; }
         }
 
     }

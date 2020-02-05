@@ -33,9 +33,5 @@ namespace Eventmaker.View
             Frame.Navigate(typeof(EventPage));
         }
 
-        private void CreateEvent(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }
