@@ -15,7 +15,7 @@ namespace Eventmaker.Model
 
         private EventCatalogSingleton()
         {
-            EventCatalog=new ObservableCollection<Event>
+            EventCatalog = new ObservableCollection<Event>
             {
                 new Event(1,"event1","*","somewhere",DateTime.Now),
                 new Event(2,"event2","*","other place",DateTime.Now)
@@ -32,7 +32,7 @@ namespace Eventmaker.Model
                 }
                 else
                 {
-                    _instance=new EventCatalogSingleton();
+                    _instance = new EventCatalogSingleton();
                     return _instance;
                 }
             }
@@ -41,6 +41,11 @@ namespace Eventmaker.Model
         public void Add(Event e)
         {
             EventCatalog.Add(e);
+        }
+
+        public void Remove(int i)
+        {
+            EventCatalog.RemoveAt(i);
         }
     }
 }

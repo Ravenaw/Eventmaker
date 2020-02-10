@@ -16,6 +16,7 @@ namespace Eventmaker.ViewModel
     class EventViewModel:INotifyPropertyChanged
     {
         public EventCatalogSingleton Instance { get; }
+        public static int SelectedEventIndex { get; set; }
         public int ID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -24,10 +25,17 @@ namespace Eventmaker.ViewModel
         public TimeSpan Time { get; set; }
         public Handler.EventHandler EventHandler { get; set; }
         private ICommand _createEventCommand;
+        private ICommand _deleteEventCommand;
         public ICommand CreateEventCommand
         {
             get { return _createEventCommand; }
             set { _createEventCommand = value; }
+        }
+
+        public ICommand DeleteEventCommand
+        {
+            get { return _deleteEventCommand; }
+            set { _deleteEventCommand = value; }
         }
         public EventViewModel()
         {
@@ -38,6 +46,7 @@ namespace Eventmaker.ViewModel
             Time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
             EventHandler = new Handler.EventHandler(this);
             CreateEventCommand = new RelayCommand(EventHandler.CreateEvent);
+            _deleteEventCommand = new RelayCommand(EventHandler.DeleteEvent);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

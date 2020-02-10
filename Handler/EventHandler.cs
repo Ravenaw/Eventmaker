@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using Eventmaker.Converter;
@@ -23,6 +24,11 @@ namespace Eventmaker.Handler
         {
             Event e = new Event(Handler.ID, Handler.Name, Handler.Description, Handler.Place, DateTimeConverter.DateTimeOffsetAndTimeSetToDateTime(Handler.Date, Handler.Time));
             Handler.Instance.Add(e);
+        }
+
+        public void DeleteEvent()
+        {
+            Handler.Instance.Remove(Handler.SelectedEventIndex);
         }
     }
 }

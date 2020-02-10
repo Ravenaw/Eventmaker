@@ -17,10 +17,14 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Row="0">
-            <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto"></ListView>
+            <ListView ItemsSource="{Binding Instance.Instance.EventCatalog}" SelectedIndex="{Binding SelectedEventIndex, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Height="auto"></ListView>
         </Grid>
         <Grid Row="1">
-            <Button Content="Add" Click="NavigateToCreate" HorizontalAlignment="Center"></Button>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Add" Click="NavigateToCreate" HorizontalAlignment="Center"/>
+                <Button Content="Delete"  HorizontalAlignment="Center" Command="{Binding DeleteEventCommand}"/>
+            </StackPanel>
+
         </Grid>
 
     </Grid>
