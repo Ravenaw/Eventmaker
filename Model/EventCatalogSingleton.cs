@@ -11,7 +11,7 @@ namespace Eventmaker.Model
     class EventCatalogSingleton
     {
         private static EventCatalogSingleton _instance;
-        public ObservableCollection<Event> EventCatalog { get; }
+        public ObservableCollection<Event> EventCatalog { get; set; }
 
         private EventCatalogSingleton()
         {

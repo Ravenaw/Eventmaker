@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using Eventmaker.Model;
 using Newtonsoft.Json;
 
@@ -12,26 +13,23 @@ namespace Eventmaker.Persistency
 {
     class PersistencyService
     {
-        public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
+        private const string _dataFile = "events.json";
+        private readonly StorageFolder _storageFolder = ApplicationData.Current.LocalFolder;
+        public async Task SaveDomainObject()
         {
-            StreamWriter sw = File.CreateText("file.txt");
-
+            string Json = JsonConvert.SerializeObject(EventCatalogSingleton.Instance.EventCatalog);
+            await FileIO.WriteTextAsync(await _storageFolder.CreateFileAsync(_dataFile, CreationCollisionOption.OpenIfExists), Json);
         }
-
-        public static async Task<List<Event>> LoadEventsFromJsonAsync()
+        public async Task LoadDomainObject()
         {
-
+            string events =
+                await FileIO.ReadTextAsync(
+                    await _storageFolder.CreateFileAsync(_dataFile, CreationCollisionOption.OpenIfExists));
+            EventCatalogSingleton.Instance.EventCatalog = JsonConvert.DeserializeObject<ObservableCollection<Event>>(events);
+            if (EventCatalogSingleton.Instance.EventCatalog == null)
+            {
+                EventCatalogSingleton.Instance.EventCatalog = new ObservableCollection<Event>();
+            }
         }
-
-        public static async void SerializeEventsFileAsync(string eventsString, string fileName)
-        {
-
-        }
-
-        public static async Task<string> DeSerializeEventsFileAsync(String fileName)
-        {
-            return (List<Event>)(JsonConvert.DeserializeObject(eventString, typeof(List<Event>)));
-        }
-
     }
 }
