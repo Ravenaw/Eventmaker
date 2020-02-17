@@ -11,7 +11,7 @@
     <Page.DataContext>
         <viewModel:EventViewModel/>
     </Page.DataContext>
-    <Grid HorizontalAlignment="Center" Width="450" Height="auto">
+    <Grid HorizontalAlignment="Center" Width="750" Height="auto">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>

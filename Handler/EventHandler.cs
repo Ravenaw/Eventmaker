@@ -28,7 +28,7 @@ namespace Eventmaker.Handler
 
         public void DeleteEvent()
         {
-            Handler.Instance.Remove(Handler.SelectedEventIndex);
+            Handler.Instance.Remove(EventViewModel.SelectedEventIndex);
         }
     }
 }
